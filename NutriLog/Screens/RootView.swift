@@ -2,10 +2,10 @@ import SwiftUI
 
 struct RootView: View {
     // TODO: Cette partie sera vue en classe pour l'expliquer comme il faut
-    @State private var isAuthenticated = true
+    @EnvironmentObject var auth: AuthViewModel
     
     var body: some View {
-        if (isAuthenticated) {
+        if (auth.isAuthenticated) {
             HomeView()
         } else {
             LoginView()
